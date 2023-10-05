@@ -42,17 +42,24 @@ private String courseName;
 		
 		Scanner sc = new Scanner(System.in);
 		
-		int total = 0, grade, gradeCounter = 1, Average;
+		int total = 0, grade, gradeCounter = 1, Average=0;
 		
-		while(gradeCounter <= 5) {
-			System.out.println("Please insert grade: ");
-			grade = sc.nextInt();
+		System.out.println("Insert grade or -1 to exit:");
+		grade = sc.nextInt();
+		
+		while(grade != -1) {
 			total = total + grade;
 			gradeCounter = gradeCounter + 1;
+			
+			System.out.println("Please insert grade: ");
+			grade = sc.nextInt();
 		}
 		
 		//promedio = sumatorio de muestras/# de muestras
-		Average = total / 5;
+		if (gradeCounter !=0) {
+		Average = total /gradeCounter;
+		
+		}
 		
 		System.out.println("The average of the grades is: " + Average);
 		
